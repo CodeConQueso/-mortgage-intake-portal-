@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Shake Animation for Validation Errors */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+  20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+.shake {
+  animation: shake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+/* Glassmorphism Surface */
+.glass-card {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Shimmer Loading Effect */
+@keyframes shimmer {
+  0% { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+
+.shimmer {
+  animation: shimmer 2s infinite linear;
+  background: linear-gradient(to right, #f1f5f9 4%, #e2e8f0 25%, #f1f5f9 36%);
+  background-size: 1000px 100%;
+}
+
+/* Print Styles: Clean Receipt Layout */
+@media print {
+  body {
+    background: white;
+  }
+  
+  /* Hide UI chrome */
+  header, footer, button, .no-print {
+    display: none !important;
+  }
+
+  /* Center the content */
+  main {
+    padding: 0;
+    margin: 0;
+    display: block;
+  }
+
+  /* Expand containers */
+  div[class*="rounded-3xl"] {
+    box-shadow: none !important;
+    border: none !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+  }
+
+  /* Ensure text is black */
+  * {
+    color: black !important;
+    text-shadow: none !important;
+  }
+}

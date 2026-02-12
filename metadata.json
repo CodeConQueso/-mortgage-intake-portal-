@@ -1,0 +1,5 @@
+{
+  "name": "Secure Loan Intake Portal",
+  "description": "A secure, ephemeral wizard for borrowers to fill out 1003 applications, credit card authorizations, and signatures without storing sensitive data in a database.",
+  "requestFramePermissions": []
+}
